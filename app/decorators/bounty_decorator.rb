@@ -12,6 +12,6 @@ class BountyDecorator < Draper::Decorator
   private
 
     def better_time time_field
-      object.public_send(time_field).strftime("%m/%d/%y %H:%M")
+      object.public_send(time_field).strftime("%m/%d/%y %H:%M") if object.send(time_field)
     end
 end

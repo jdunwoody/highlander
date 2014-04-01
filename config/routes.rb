@@ -21,6 +21,8 @@ Highlander::Application.routes.draw do
     end
 
     resources :events, only: [ :create ]
+    resources :leaderboard, only: [ :index ]
+    resources :bounties, only: [ :index ]
 
     namespace :adapters do
       resources :github,  only: [ :create ]
